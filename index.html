@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brain Glitch</title>
+    <style>
+      :root {
+        --bg: #0b1020;
+        --bg-2: #151a2b;
+        --panel: rgba(18, 25, 42, 0.76);
+        --glow: #8b5cf6;
+        --cyan: #3bd9ff;
+        --pink: #ff4fd8;
+        --lime: #c3ff5b;
+        --text: #f4efff;
+        --muted: #bfccff;
+      }
+
+      * { box-sizing: border-box; }
+
+      html, body {
+        margin: 0;
+        min-height: 100%;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(circle at top left, rgba(139, 92, 246, 0.35), transparent 35%),
+          radial-gradient(circle at bottom right, rgba(59, 217, 255, 0.25), transparent 30%),
+          linear-gradient(135deg, var(--bg), var(--bg-2));
+      }
+
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 24px;
+      }
+
+      .card {
+        position: relative;
+        width: min(980px, 100%);
+        background: var(--panel);
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 28px;
+        padding: clamp(24px, 4vw, 48px);
+        box-shadow: 0 20px 60px rgba(0,0,0,0.45);
+        overflow: hidden;
+      }
+
+      .card::before {
+        content: "";
+        position: absolute;
+        inset: -2px;
+        background: linear-gradient(120deg, rgba(255,79,216,0.3), transparent 30%, rgba(59,217,255,0.25), transparent 70%);
+        z-index: 0;
+        filter: blur(18px);
+      }
+
+      .content {
+        position: relative;
+        z-index: 1;
+      }
+
+      .eyebrow {
+        display: inline-block;
+        font-size: 12px;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: var(--cyan);
+        margin-bottom: 18px;
+        font-weight: 700;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(2.8rem, 6vw, 6rem);
+        line-height: 0.98;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        font-weight: 900;
+        text-shadow: 0 0 18px rgba(255, 79, 216, 0.5), 0 0 26px rgba(59, 217, 255, 0.35);
+      }
+
+      .accent {
+        display: inline-block;
+        background: linear-gradient(90deg, var(--pink), var(--cyan), var(--lime));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .subtitle {
+        margin-top: 22px;
+        max-width: 700px;
+        font-size: clamp(1rem, 2vw, 1.3rem);
+        line-height: 1.6;
+        color: var(--muted);
+      }
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 26px;
+      }
+
+      .tag {
+        border: 1px solid rgba(255,255,255,0.12);
+        background: rgba(255,255,255,0.03);
+        border-radius: 999px;
+        padding: 10px 16px;
+        font-weight: 600;
+        color: var(--text);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-size: 0.72rem;
+      }
+
+      .footer {
+        margin-top: 32px;
+        padding-top: 22px;
+        border-top: 1px solid rgba(255,255,255,0.08);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .status {
+        color: var(--lime);
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-size: 0.72rem;
+      }
+
+      .note {
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      @media (max-width: 640px) {
+        .footer {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="card">
+      <div class="content">
+        <div class="eyebrow">Party Mode ✦</div>
+
+        <h1>
+          <span class="accent">Brain</span><br />
+          Glitch
+        </h1>
+
+        <p class="subtitle">
+          Science is real. Confidence is optional.<br />
+          Host browser must remain open during multiplayer.
+        </p>
+
+        <div class="tags">
+          <span class="tag">Multiplayer</span>
+          <span class="tag">Chaos</span>
+          <span class="tag">Live</span>
+          <span class="tag">Invite Only</span>
+        </div>
+
+        <div class="footer">
+          <div class="status">Booting up the glitch</div>
+          <div class="note">Keep the host browser open for the session.</div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
